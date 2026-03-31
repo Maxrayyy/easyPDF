@@ -1,0 +1,43 @@
+# PDF 处理配置文件
+
+# 模型路径（请将模型文件放到 models/ 目录，或使用绝对路径）
+models:
+  layout_model_dir: "models/PP-DocLayout_plus-L_infer"
+  ocr_det_model_dir: "models/PP-OCRv5_server_det_infer"
+  ocr_rec_model_dir: "models/PP-OCRv5_server_rec_infer"
+
+# 默认路径
+paths:
+  default_pdf: "pdfs/sample.pdf"  # 将 PDF 文件放到 pdfs/ 目录
+  output_dir: "data/txt"
+  temp_image_dir: "data/figures/pages"
+
+# 处理参数
+processing:
+  dpi: 300                    # PDF 转图片的分辨率
+  first_page: 9               # 默认起始页
+  last_page: 69               # 默认结束页
+  max_crop_width: 2000        # OCR 区域最大宽度
+  device: "cpu"               # 设备：cpu 或 gpu
+
+# OCR 参数
+ocr:
+  enable_mkldnn: false
+  cpu_threads: 2
+  use_doc_orientation_classify: false
+  use_doc_unwarping: false
+  use_textline_orientation: false
+
+# 布局检测
+layout:
+  target_labels:              # 需要提取的区域类型
+    - "text"
+    - "paragraph_title"
+  # 可选：table, figure, caption, header, footer
+
+# 输出格式
+output:
+  format: "txt"               # txt, json, markdown
+  encoding: "utf-8"
+  add_page_separator: true
+  page_separator_template: "\n===== 第 {page_num} 页 =====\n"

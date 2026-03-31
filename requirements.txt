@@ -1,0 +1,15 @@
+# PDF 处理
+pdf2image>=1.16.0
+Pillow>=9.0.0
+
+# PaddleX 和 PaddleOCR
+paddlepaddle>=2.5.0
+paddlex>=3.0.0
+paddleocr>=2.7.0
+
+# 图像处理
+opencv-python>=4.5.0
+numpy>=1.21.0
+
+# 配置和日志
+PyYAML>=6.0
