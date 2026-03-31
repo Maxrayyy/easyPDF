@@ -43,7 +43,7 @@ easyPDF/
 ### 1. 克隆项目
 
 ```bash
-git clone <repository_url>
+git clone <https://github.com/Maxrayyy/easyPDF.git>
 cd easyPDF
 ```
 
